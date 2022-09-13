@@ -291,8 +291,9 @@
 .breadcrumb {
 }
 
-.more-posts-btn {
-   cursor: pointer;
+.diamond-icon__more-posts {
+   color: var(--black-color);
+   transform: rotate(-45deg);
 }
 
 .hide-class {

@@ -1,10 +1,13 @@
 .diamond-icon--yellow {
+   background-color: var(--yellow-color);
 }
 
-.diamond-icon--black {
+.diamond-icon--yellow:hover {
+   background-color: var(--black-color);
 }
 
 .diamond-icon--white {
+   background-color: var(--white-color);
 }
 
 .next-post-btn--previous {
