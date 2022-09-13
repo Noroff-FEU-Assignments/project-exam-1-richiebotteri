@@ -43,3 +43,40 @@
    font-size: var(--font-h1);
    font-variation-settings: "wght" 700;
 }
+
+.text-cap {
+   text-transform: capitalize;
+}
+
+.flex {
+   display: flex;
+}
+
+.flex-col {
+   display: flex;
+   flex-direction: column;
+}
+
+.flex-gap-10 {
+   gap: 10px;
+}
+
+.flex-gap-40 {
+   gap: 40px;
+}
+
+.space-between {
+   justify-content: space-between;
+}
+
+.center-horizontal {
+   justify-content: center;
+}
+
+.margin-h-80 {
+   margin: 80px auto;
+}
+
+.padding-w-20 {
+   padding: 0 20px;
+}

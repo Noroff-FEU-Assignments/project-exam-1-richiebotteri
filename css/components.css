@@ -1,5 +1,13 @@
 /* Global components */
 
+.content-container {
+   min-width: 300px;
+   max-width: 1310px;
+   margin: auto;
+}
+
+/* ------------------------------------------------------- */
+
 /* Header */
 
 .header {
@@ -10,10 +18,7 @@
 .footer-content {
    display: flex;
    justify-content: space-between;
-   min-width: 300px;
-   max-width: 1310px;
    height: 100px;
-   margin: auto;
 }
 
 .header-logo {
@@ -48,7 +53,8 @@
    font-size: var(--font-p3);
 }
 
-.header-nav__link:hover {
+.header-nav__link:hover,
+.header-nav__link--active {
    box-shadow: 0 5px 0;
 }
 
@@ -71,6 +77,14 @@
 
 .close-menu-btn:hover {
    background-color: var(--white-color);
+}
+
+.close-menu-btn:focus {
+   outline: 3px dotted var(--white-color);
+}
+
+.close-menu-btn:focus > * {
+   color: var(--white-color);
 }
 
 .close-menu-btn > *,
@@ -201,10 +215,12 @@
    gap: 80px;
    margin: 80px;
 }
-.latest-posts__flex-wrapper {
+.latest-posts__grid-wrapper,
+.posts-container {
    display: grid;
    grid-template-columns: auto;
    grid-template-rows: auto;
+   justify-content: center;
    grid-gap: 50px;
 }
 
@@ -216,13 +232,15 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   width: 334px;
+   min-width: 300px;
+   max-width: 600px;
    background-color: var(--black-color);
    color: var(--white-color);
 }
 
 .post__img {
    width: 100%;
+   max-height: 350px;
    object-fit: cover;
 }
 
@@ -242,6 +260,12 @@
 .post__link {
    box-shadow: 0 3px 0 var(--yellow-color);
    padding-bottom: 4px;
+}
+
+.post__link:hover,
+.post__link:focus {
+   color: var(--white-color);
+   box-shadow: 0 3px 0 var(--white-color);
 }
 
 .next-post-wrapper {
@@ -275,11 +299,27 @@
    display: none;
 }
 
+.submit-btn {
+   margin-top: 40px;
+   width: 240px;
+   height: 60px;
+   background-color: var(--yellow-color);
+   color: var(--black-color);
+   margin: 40px auto 0 auto;
+   cursor: pointer;
+   font-size: var(--font-p3);
+}
+
+.submit-btn:hover {
+   background-color: var(--black-color);
+   color: var(--yellow-color);
+}
+
 /* ------------------------------------------------------- */
 
 /* Media Queries */
 
-@media (min-width: 770px) {
+@media (min-width: 740px) {
    .header-nav {
       position: static;
       padding-left: 90px;
@@ -301,7 +341,7 @@
    }
 
    .header-nav__link:hover {
-      box-shadow: 0 5px 0;
+      box-shadow: 0 5px 0 var(--black-color);
    }
 
    .header-menu-btn {
@@ -333,7 +373,8 @@
    .latest-posts__wrapper {
       align-items: center;
    }
-   .latest-posts__flex-wrapper {
+   .latest-posts__grid-wrapper,
+   .posts-container {
       grid-template-columns: auto auto;
    }
 

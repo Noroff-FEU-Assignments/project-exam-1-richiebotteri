@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="css/main.css" />
       <link rel="stylesheet" href="icons/fontawesome-free-6.1.2-web/css/all.css" />
-      <title>Homepage</title>
+      <title>Contact</title>
    </head>
    <body>
       <header class="header">
@@ -17,9 +17,9 @@
             </a>
             <nav class="header-nav hide-class">
                <ul class="header-nav__list">
-                  <li class="header-nav__item"><a href="index.html" class="header-nav__link header-nav__link--active">Home</a></li>
+                  <li class="header-nav__item"><a href="index.html" class="header-nav__link">Home</a></li>
                   <li class="header-nav__item"><a href="about.html" class="header-nav__link">About</a></li>
-                  <li class="header-nav__item"><a href="posts.html" class="header-nav__link">Posts</a></li>
+                  <li class="header-nav__item"><a href="posts.html" class="header-nav__link header-nav__link--active">Posts</a></li>
                   <li class="header-nav__item"><a href="contact.html" class="header-nav__link">Contact</a></li>
                </ul>
                <button class="close-menu-btn"><i class="fa-solid fa-xmark close-menu-btn__icon"></i></button>
@@ -27,20 +27,10 @@
          </div>
       </header>
       <main>
-         <div class="banner">
-            <div class="banner-description">
-               <h2 class="font-size-p1">my blog about working out</h2>
-            </div>
-         </div>
-         <div class="diamond-icon-wrapper">
-            <div class="diamond-icon">
-               <i class="fa-solid fa-dumbbell diamond-icon__symbol"></i>
-            </div>
-         </div>
-         <section class="latest-posts">
-            <div class="latest-posts__wrapper">
-               <h3 class="latest-posts__header-title">Featured Posts</h3>
-               <div class="latest-posts__grid-wrapper">
+         <div class="content-container content-container--800 margin-h-80">
+            <section class="flex-col flex-gap-40 padding-w-20">
+               <h2>All posts</h2>
+               <div class="posts-container">
                   <div class="post">
                      <img class="post__img" src="/images/post-1-img.jpg" alt="post-1-img" />
                      <div class="post__description">
@@ -62,14 +52,8 @@
                      </div>
                   </div>
                </div>
-               <div class="next-post-wrapper">
-                  <button class="next-post-btn next-post-btn--previous">
-                     <i class="fa-solid fa-left-long font-size-p3"></i>
-                  </button>
-                  <button class="next-post-btn"><i class="fa-solid fa-right-long font-size-p3"></i></button>
-               </div>
-            </div>
-         </section>
+            </section>
+         </div>
       </main>
       <footer class="footer">
          <div class="footer-content content-container">
