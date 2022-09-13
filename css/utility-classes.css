@@ -13,7 +13,7 @@
    font-variation-settings: "wght" 900;
 }
 
-/* Typography paragraph sizes */
+/* Typography paragraph sizes and form */
 
 .font-size-p4 {
    font-size: var(--font-p4);
@@ -47,6 +47,8 @@
 .text-cap {
    text-transform: capitalize;
 }
+
+/* Utility Layout Classes */
 
 .flex {
    display: flex;

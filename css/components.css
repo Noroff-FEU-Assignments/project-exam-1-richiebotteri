@@ -97,6 +97,10 @@
    color: var(--black-color);
 }
 
+.hide-class {
+   display: none;
+}
+
 /* ------------------------------------------------------- */
 /* Footer */
 
@@ -201,6 +205,8 @@
 
 /* ------------------------------------------------------- */
 
+/* Posts */
+
 .latest-posts {
    height: 100%;
    display: flex;
@@ -286,19 +292,19 @@
    color: var(--white-color);
 }
 
-/* ------------------------------------------------------- */
-
-.breadcrumb {
-}
-
 .diamond-icon__more-posts {
    color: var(--black-color);
    transform: rotate(-45deg);
 }
 
-.hide-class {
-   display: none;
+/* ------------------------------------------------------- */
+/* Breadcrumb */
+
+.breadcrumb {
 }
+
+/* ------------------------------------------------------- */
+/* Submit button */
 
 .submit-btn {
    margin-top: 40px;
