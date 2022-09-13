@@ -1,0 +1,50 @@
+@font-face {
+   font-family: "Jost";
+   src: url("../fonts/Jost-VariableFont_wght.ttf");
+}
+
+* {
+   /* Css reset */
+   margin: 0;
+   text-decoration: none;
+   list-style: none;
+   box-sizing: border-box;
+   font-size: var(--font-base-size);
+}
+
+body {
+   font-family: "Jost", sans-serif;
+   font-variation-settings: "wght" 500;
+   background-color: var(--white-color);
+}
+
+ul {
+   padding: 0;
+}
+
+li {
+   padding: 5px 0;
+}
+
+h1 {
+   font-size: var(--font-h1);
+   font-variation-settings: "wght" 700;
+}
+
+h2 {
+   font-size: var(--font-h2);
+   font-variation-settings: "wght" 600;
+}
+
+h3 {
+   font-size: var(--font-h3);
+   font-variation-settings: "wght" 600;
+}
+
+p {
+   font-size: var(--font-p3);
+}
+
+button {
+   border: none;
+}

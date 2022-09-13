@@ -1,0 +1,14 @@
+.diamond-icon--yellow {
+}
+
+.diamond-icon--black {
+}
+
+.diamond-icon--white {
+}
+
+.next-post-btn--previous {
+   background-color: var(--white-color);
+   border: 1px solid black;
+   color: var(--black-color);
+}

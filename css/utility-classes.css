@@ -1,0 +1,45 @@
+/* Typography Weights */
+
+.font-weight-600 {
+   font-variation-settings: "wght" 600;
+}
+.font-weight-700 {
+   font-variation-settings: "wght" 700;
+}
+.font-weight-800 {
+   font-variation-settings: "wght" 800;
+}
+.font-weight-900 {
+   font-variation-settings: "wght" 900;
+}
+
+/* Typography paragraph sizes */
+
+.font-size-p4 {
+   font-size: var(--font-p4);
+}
+.font-size-p3 {
+   font-size: var(--font-p3);
+}
+
+.font-size-p2 {
+   font-size: var(--font-p2);
+}
+.font-size-p1 {
+   font-size: var(--font-p1);
+}
+
+.font-size-h3 {
+   font-size: var(--font-h3);
+   font-variation-settings: "wght" 600;
+}
+
+.font-size-h2 {
+   font-size: var(--font-h2);
+   font-variation-settings: "wght" 600;
+}
+
+.font-size-h1 {
+   font-size: var(--font-h1);
+   font-variation-settings: "wght" 700;
+}

@@ -1,0 +1,34 @@
+/* Global Css Variables */
+
+:root {
+   /* Colors */
+
+   --yellow-color: #f2d949;
+   --black-color: #2a2a2a;
+   --white-color: #f9f6e7;
+
+   /* Font-sizes with scale of 1.2 and base size of 16px*/
+   --font-base-size: 1rem;
+
+   --font-p4: var(--font-base-size);
+   --font-p3: calc(var(--font-p4) * 1.2);
+   --font-p2: calc(var(--font-p3) * 1.2);
+   --font-p1: calc(var(--font-p2) * 1.2);
+   --font-h3: calc(var(--font-p1) * 1.2);
+   --font-h2: calc(var(--font-h3) * 1.2);
+   --font-h1: calc(var(--font-h2) * 1.2);
+}
+
+@media (min-width: 770px) {
+   :root {
+      /* Font-sizes with scale of 1.25 */
+
+      --font-p4: var(--font-base-size);
+      --font-p3: calc(var(--font-p4) * 1.25);
+      --font-p2: calc(var(--font-p3) * 1.25);
+      --font-p1: calc(var(--font-p2) * 1.25);
+      --font-h3: calc(var(--font-p1) * 1.25);
+      --font-h2: calc(var(--font-h3) * 1.25);
+      --font-h1: calc(var(--font-h2) * 1.25);
+   }
+}
