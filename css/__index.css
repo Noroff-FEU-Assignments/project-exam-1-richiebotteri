@@ -1,0 +1,105 @@
+/* ------------------------------------------------------- */
+/* Banner */
+.banner {
+   background: center/cover url("../images/banner-img.jpg") no-repeat;
+   height: 400px;
+   min-width: 300px;
+   max-width: 1310px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+.banner-description {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 40px;
+   width: 260px;
+   height: 260px;
+   text-transform: uppercase;
+   background-color: rgba(42, 42, 42, 0.9);
+   color: var(--white-color);
+   padding: 20px;
+}
+
+/* ------------------------------------------------------- */
+/* Index Posts */
+
+.latest-posts {
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 40px 0;
+}
+
+.latest-posts__wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 80px;
+   margin: 80px;
+}
+.latest-posts__grid-wrapper,
+.posts-container {
+   display: grid;
+   grid-template-columns: auto;
+   grid-template-rows: auto;
+   justify-content: center;
+   grid-gap: 50px;
+}
+
+.latest-posts__header-title {
+   text-align: center;
+}
+
+.next-post-wrapper {
+   width: 334px;
+   display: flex;
+   gap: 50px;
+   justify-content: center;
+}
+
+.next-post-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 112px;
+   height: 40px;
+   background-color: var(--black-color);
+   cursor: pointer;
+   color: var(--white-color);
+}
+
+:is(.next-post-btn, .next-post-btn--previous):hover,
+:is(.next-post-btn, .next-post-btn--previous):focus {
+   background-color: var(--yellow-color);
+   border: 1px solid var(--black-color);
+   color: var(--black-color);
+   transition: 0.1s ease-in;
+}
+
+@media (min-width: 740px) {
+   .banner {
+      justify-content: flex-start;
+   }
+
+   .banner-description {
+      justify-content: center;
+      width: 230px;
+      height: 400px;
+      padding: 70px 20px;
+   }
+   .latest-posts__header-title {
+      text-align: left;
+   }
+   .latest-posts__wrapper {
+      align-items: center;
+   }
+   .latest-posts__grid-wrapper,
+   .posts-container {
+      grid-template-columns: auto auto;
+   }
+}

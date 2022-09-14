@@ -1,0 +1,14 @@
+/* Single post */
+
+.post-description {
+   margin-top: 40px;
+}
+
+.post-description__metadata {
+   border-bottom: 2px solid black;
+   line-height: 2em;
+}
+
+.post-description__story {
+   padding: 20px 0px;
+}
