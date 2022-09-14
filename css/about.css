@@ -13,7 +13,7 @@
    width: auto;
 }
 
-@media (min-width: 798px) {
+@media (min-width: 770px) {
    .about-wrapper {
       width: 70%;
    }
