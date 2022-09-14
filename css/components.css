@@ -292,15 +292,50 @@
    color: var(--white-color);
 }
 
+/* ------------------------------------------------------- */
+/* More Post Button */
+
 .diamond-icon__more-posts {
    color: var(--black-color);
    transform: rotate(-45deg);
+   cursor: pointer;
+}
+
+.diamond-icon__more-posts:hover {
+   color: var(--yellow-color);
 }
 
 /* ------------------------------------------------------- */
 /* Breadcrumb */
 
 .breadcrumb {
+   background-color: var(--black-color);
+   color: var(--white-color);
+   padding: 10px;
+}
+
+.breadcrumb__link {
+   color: var(--white-color);
+   text-decoration: underline;
+}
+
+.breadcrumb__link:hover {
+   color: var(--yellow-color);
+}
+
+/* Single post */
+
+.post-description {
+   margin-top: 40px;
+}
+
+.post-description__metadata {
+   border-bottom: 2px solid black;
+   line-height: 2em;
+}
+
+.post-description__story {
+   padding: 20px 0px;
 }
 
 /* ------------------------------------------------------- */

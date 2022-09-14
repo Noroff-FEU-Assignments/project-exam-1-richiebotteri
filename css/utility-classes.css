@@ -59,6 +59,11 @@
    flex-direction: column;
 }
 
+.flex-colrow {
+   display: flex;
+   flex-direction: column;
+}
+
 .flex-gap-10 {
    gap: 10px;
 }
@@ -75,10 +80,31 @@
    justify-content: center;
 }
 
+.center-vertical {
+   align-items: center;
+}
+
 .margin-h-80 {
    margin: 80px auto;
 }
 
 .padding-w-20 {
    padding: 0 20px;
+}
+
+/* Image */
+.img-cover {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.img-radius-100 {
+   border-radius: 100%;
+}
+
+@media (min-width: 779px) {
+   .flex-colrow {
+      flex-direction: row;
+   }
 }
