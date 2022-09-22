@@ -42,7 +42,15 @@
    gap: 80px;
    margin: 80px;
 }
-.latest-posts__grid-wrapper,
+.latest-posts__overflow {
+   width: 300px;
+   overflow: hidden;
+}
+.latest-posts__slider {
+   width: 100%;
+   transition: 0.5s;
+}
+
 .posts-container {
    display: grid;
    grid-template-columns: auto;
@@ -56,7 +64,7 @@
 }
 
 .next-post-wrapper {
-   width: 334px;
+   width: auto;
    display: flex;
    gap: 50px;
    justify-content: center;
@@ -97,6 +105,9 @@
    }
    .latest-posts__wrapper {
       align-items: center;
+   }
+   .latest-posts__overflow {
+      width: 640px;
    }
    .latest-posts__grid-wrapper,
    .posts-container {
