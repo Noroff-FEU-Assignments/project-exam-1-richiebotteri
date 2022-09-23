@@ -26,13 +26,15 @@ function displayPostsOnIndex(posts) {
          singlePost._embedded["author"].forEach(function (authorArray) {
             postHtmlData += `
               <div class="slide-post">
+              <a href="single-post.html?id=${singlePost.id}" class="slide-post__link" >
               <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
               <div class="slide-post__description">
               <p class="slide-post__title font-size-p1">${singlePost.title.rendered}</p>
               <p class="slide-post__metadata font-size-p4">written by: ${authorArray.name}</p>
-              <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
-              <a class="slide-post__link font-size-p3" href="single-post.html">Read more</a>
+              <span class="slide-post__content ">${singlePost.excerpt.rendered}</span>
+              <p class="slide-post__read-more font-size-p3">Read more</p>
               </div>
+              </a>
               </div>
               `;
          });

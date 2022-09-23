@@ -26,6 +26,10 @@ li {
    padding: 5px 0;
 }
 
+a {
+   color: var(--white-color);
+}
+
 h1 {
    font-size: var(--font-h1);
    font-variation-settings: "wght" 700;
