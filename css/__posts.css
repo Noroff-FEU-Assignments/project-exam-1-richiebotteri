@@ -2,7 +2,6 @@
 
 .slide-post {
    display: flex;
-   visibility: visible;
    flex-direction: column;
    justify-content: space-between;
    min-width: 300px;
@@ -12,17 +11,17 @@
 }
 
 .slide-post__img {
-   max-width: 100%;
-   max-height: 350px;
+   width: 100%;
    object-fit: cover;
 }
 
 .slide-post__description {
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: space-between;
    gap: 20px;
    padding: 20px 20px 30px 20px;
+   height: fit-content;
 }
 
 .slide-post__title,
@@ -39,6 +38,10 @@
 .slide-post__link:focus {
    color: var(--white-color);
    box-shadow: 0 3px 0 var(--white-color);
+}
+
+.slide-post__content {
+   height: 100px;
 }
 
 .hide-post {
