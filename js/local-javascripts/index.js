@@ -4,6 +4,7 @@ const API_URL = "http://localhost:80/wordpress/wp-json/wp/v2/posts?_embed&&per_p
 
 let per_page = 10;
 
+const sliderPostsContainer = document.querySelector("[data-posts-slider-container]");
 async function getWpPostData() {
    try {
       const response = await fetch(API_URL + per_page.toString());
@@ -11,12 +12,17 @@ async function getWpPostData() {
       displayPostsOnIndex(posts);
    } catch {
       console.log("error");
+      sliderPostsContainer.innerHTML = "";
+      sliderPostsContainer.innerHTML += `
+      <div class="error flex-col flex-gap-20">
+          <p class="font-size-p3">Oh now, something went wrong :/</p>
+          <p class="font-size-p3">Come back later and try again!</p>
+      </div>`;
    }
 }
 
 getWpPostData();
 
-const sliderPostsContainer = document.querySelector("[data-posts-slider-container]");
 let postHtmlData = "";
 function displayPostsOnIndex(posts) {
    posts.forEach(function (singlePost) {
@@ -47,7 +53,7 @@ function displayPostsOnIndex(posts) {
 let numberOfSlider = 0;
 
 setTimeout(function () {
-   numberOfSlider = sliderPostsContainer.children.length - 1;
+   numberOfSlider = sliderPostsContainer.children.length - 2;
 }, 1000);
 
 const nextPostBtn = document.querySelector("[data-slider-button-next]");
@@ -61,7 +67,13 @@ function moveToNextSlide() {
       sliderPostsContainer.style.transform = `translateX(${currentTransform}px)`;
       console.log(currentTransform);
    } else {
-      console.log("Can't go past length of slides");
+      console.log("error");
+      contentContainer.innerHTML = "";
+      contentContainer.innerHTML += `
+      <div class="error flex-col flex-gap-20">
+          <p class="font-size-p3">Oh now, something went wrong :/</p>
+          <p class="font-size-p3">Come back later and try again!</p>
+      </div>`;
    }
 }
 

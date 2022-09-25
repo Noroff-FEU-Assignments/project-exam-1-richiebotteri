@@ -28,7 +28,7 @@
       </header>
       <main>
          <section class="content-container content-container--800 margin-h-80">
-            <form action="" class="form flex-col flex-gap-20 padding-w-20">
+            <form action="" method="get" class="form flex-col flex-gap-20 padding-w-20">
                <h2>Lets talk!</h2>
                <p class="font-size-p4">
                   Required forms is marked with "
@@ -43,7 +43,8 @@
                         <span class="required-symbol">*</span>
                         :
                      </label>
-                     <input type="text" class="form__input" id="firstname" name="name" required />
+                     <input type="text" class="form__input" id="firstname" name="name" />
+                     <p class="valid-fail-msg font-size-p4 padding-w-20 hide-valid-msg">Firstname should be more than 5 characters</p>
                   </div>
                   <div class="flex-col flex-gap-10">
                      <label for="lastname">
@@ -51,7 +52,8 @@
                         <span class="required-symbol">*</span>
                         :
                      </label>
-                     <input type="text" class="form__input" id="lastname" name="name" required />
+                     <input type="text" class="form__input" id="lastname" name="name" />
+                     <p class="valid-fail-msg font-size-p4 padding-w-20 hide-valid-msg">Lastname should be more than 5 characters</p>
                   </div>
                </div>
                <div class="form-wrapper flex-colrow flex-gap-20">
@@ -61,7 +63,8 @@
                         <span class="required-symbol">*</span>
                         :
                      </label>
-                     <input type="email" class="form__input" id="email" name="email" required />
+                     <input type="email" class="form__input" id="email" name="email" />
+                     <p class="valid-fail-msg font-size-p4 padding-w-20 hide-valid-msg">Email must be a valid email address; Person@example.com</p>
                   </div>
                   <div class="flex-col flex-gap-10">
                      <label for="subject">
@@ -69,22 +72,23 @@
                         <span class="required-symbol">*</span>
                         :
                      </label>
-                     <input type="text" class="form__input" id="subject" name="subject" required />
+                     <input type="text" class="form__input" id="subject" name="subject" />
+                     <p class="valid-fail-msg font-size-p4 padding-w-20 hide-valid-msg">Subject should be more than 15 characters</p>
                   </div>
                </div>
                <label for="message">
                   Message
                   <span class="required-symbol">*</span>
-                  :
                </label>
-               <textarea name="message" id="message" cols="30" rows="10" required></textarea>
-               <ul class="form-requirements padding-w-20">
-                  <li class="form-requirements__name display-none">Firstname and Lastname (Should be more than 5 characters long)</li>
-                  <li class="form-requirements__email display-none">Email address (Must be a valid email address)</li>
-                  <li class="form-requirements__subject display-none">Subject (Should be more than 15 characters long)</li>
-                  <li class="form-requirements__message display-none">Message content (Should be more than 25 characters long)</li>
-               </ul>
-               <button type="submit" class="submit-btn">Send Now</button>
+               <textarea name="message" id="message" cols="30" rows="10"></textarea>
+               <p class="valid-fail-msg font-size-p4 padding-w-20 hide-valid-msg">Message should be more than 25 characters</p>
+               <div class="notValidFormMessage margin-t-40 flex hide-valid-msg">
+                  <p>oh no! the form is not fully filled out</p>
+               </div>
+               <div class="submit-complete margin-t-40 flex hide-success-msg">
+                  <p>Message Sent</p>
+               </div>
+               <button type="submit" class="submit-btn">Submit Now</button>
             </form>
          </section>
       </main>

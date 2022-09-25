@@ -196,6 +196,24 @@
    color: var(--yellow-color);
 }
 
+/* API feedback Message */
+
+.loader {
+   text-align: center;
+}
+
+.error {
+   min-width: 300px;
+   background-color: lightcoral;
+   padding: 20px;
+   text-align: left;
+   margin: auto;
+}
+
+.main {
+   min-height: 300px;
+}
+
 /* ------------------------------------------------------- */
 
 /* Media Queries */

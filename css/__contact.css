@@ -12,8 +12,22 @@
    display: none;
 }
 
-.required-symbol {
-   color: red;
+.required-symbol,
+.valid-fail-msg {
+   color: darkred;
+}
+
+.valid-fail-msg {
+   min-width: 300px;
+   max-width: 350px;
+}
+
+.hide-valid-msg {
+   display: none;
+}
+
+.hide-success-msg {
+   display: none;
 }
 
 /* ------------------------------------------------------- */
@@ -41,8 +55,19 @@
    color: white;
 }
 
-.notValidMessage {
-   color: darkred;
+.notValidFormMessage,
+.submit-complete {
+   color: var(--black-color);
+   height: 200px;
+   padding: 40px;
+   justify-content: center;
+   align-items: center;
+}
+.notValidFormMessage {
+   background-color: lightcoral;
+}
+.submit-complete {
+   background-color: lightgreen;
 }
 
 @media (min-width: 770px) {

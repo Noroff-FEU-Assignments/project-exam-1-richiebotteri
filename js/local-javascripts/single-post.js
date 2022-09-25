@@ -8,6 +8,8 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
+const contentContainer = document.querySelector("[data-main-post-content]");
+
 async function getWpPostData() {
    try {
       const response = await fetch(API_URL + id + "?_embed");
@@ -16,14 +18,19 @@ async function getWpPostData() {
       displaySinglePost(singlePost);
    } catch {
       console.log("error");
+      contentContainer.innerHTML = "";
+      contentContainer.innerHTML += `
+      <div class="error flex-col flex-gap-20">
+          <p class="font-size-p3">Oh now, something went wrong :/</p>
+          <p class="font-size-p3">Come back later and try again!</p>
+      </div>`;
    }
 }
 
 // Display API single post data as HTML on posts.html
 
-const contentContainer = document.querySelector("[data-main-post-content]");
-
 function displaySinglePost(singlePost) {
+   contentContainer.innerHTML = "";
    singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
       singlePost._embedded["author"].forEach(function (authorArray) {
          contentContainer.innerHTML += `

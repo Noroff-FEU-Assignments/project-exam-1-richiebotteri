@@ -12,36 +12,45 @@ Please use JavaScript for validation, show error messages if the values in the t
 const requiredSymbols = document.querySelectorAll(".required-symbol");
 const inputs = document.querySelectorAll("input");
 const message = document.querySelector("textarea");
-const submitBtn = document.querySelector(".submit-btn");
+const form = document.querySelector(".form");
 const formMsgContainer = document.querySelector(".form-requirements");
+const notValidFormMsg = document.querySelector(".notValidFormMessage");
+const submitMsg = document.querySelector(".submit-complete");
+let passArray = []; /* <-- for checking that form is valid */
 
 // target the right form input
 
-const targetFormInput = function (event) {
-   let activeInput = event.target;
-   if (activeInput.id == "firstname") {
-      validateStringLength(activeInput, 5);
-   } else if (activeInput.id == "lastname") {
-      validateStringLength(activeInput, 5);
-   } else if (activeInput.id == "subject") {
-      validateStringLength(activeInput, 15);
-   } else if (activeInput.id == "email") {
-      validateEmail(activeInput);
-   } else if (activeInput.id == "message") {
-      validateStringLength(activeInput, 25);
+function sendFeedbackIfNotValid(event) {
+   event.preventDefault();
+   passArray = [];
+   const formInputs = event.target;
+   for (let i = 0; i < formInputs.length; i++) {
+      if (formInputs[i].tagName == "INPUT" || formInputs[i].tagName == "TEXTAREA") {
+         console.log(formInputs[i]);
+         if (formInputs[i].id == "firstname") {
+            validateStringLength(formInputs[i], 5);
+         } else if (formInputs[i].id == "lastname") {
+            validateStringLength(formInputs[i], 5);
+         } else if (formInputs[i].id == "subject") {
+            validateStringLength(formInputs[i], 15);
+         } else if (formInputs[i].id == "email") {
+            validateEmail(formInputs[i]);
+         } else if (formInputs[i].id == "message") {
+            validateStringLength(formInputs[i], 25);
+         }
+      }
    }
-};
+}
 
 // validate the data typed inside the input
 
 const validateStringLength = function (activeInput, number) {
-   let stringMsg = "";
    if (activeInput.value.trim().length >= number) {
-      console.log("string = passed");
-      toggleNotValidFormMsg(true, "form-requirements__name");
+      console.log("namestring = passed");
+      removeValidationMessage(activeInput, true);
    } else {
-      console.log("string = NOT passed");
-      toggleNotValidFormMsg(false, "form-requirements__name");
+      console.log("namestring = NOT passed");
+      showValidationMessage(activeInput, false);
    }
 };
 
@@ -50,25 +59,46 @@ const validateEmail = function (activeInput) {
    const isValidEmail = regEx.test(activeInput.value);
    if (isValidEmail == true) {
       console.log("email == passed");
-      toggleNotValidFormMsg();
+      removeValidationMessage(activeInput, true);
    } else {
       console.log("email == NOt passed");
-      toggleNotValidFormMsg();
+      showValidationMessage(activeInput, false);
    }
 };
 
 // Send feedback to user when input is not correct
 
-function toggleNotValidFormMsg(isValid, string) {
-   formMsgContainer.childNodes.forEach(function (inputMsg) {
-      console.log(inputMsg.classList.contains(""));
-   });
+function removeValidationMessage(activeInput, isValid) {
+   activeInput.nextSibling.nextElementSibling.classList.add("hide-valid-msg");
+   passArray.push(isValid);
+   console.log(passArray);
+   checkAllFormInputs();
+}
+
+function showValidationMessage(activeInput, isValid) {
+   activeInput.nextSibling.nextElementSibling.classList.remove("hide-valid-msg");
+   passArray.push(isValid);
+   console.log(passArray);
+   checkAllFormInputs();
+}
+
+function checkAllFormInputs() {
+   // Condition: check if array has one or more false values
+   const falsy = function (element) {
+      return element === false;
+   };
+
+   if (passArray.some(falsy)) {
+      console.log("form is not valid");
+      notValidFormMsg.classList.remove("hide-valid-msg");
+      submitMsg.classList.add("hide-success-msg");
+   } else {
+      console.log("form passed!");
+      notValidFormMsg.classList.add("hide-valid-msg");
+      submitMsg.classList.remove("hide-success-msg");
+   }
 }
 
 // Listeners
 
-inputs.forEach(function (input) {
-   input.addEventListener("keyup", targetFormInput);
-});
-
-message.addEventListener("keyup", targetFormInput);
+form.addEventListener("submit", sendFeedbackIfNotValid);

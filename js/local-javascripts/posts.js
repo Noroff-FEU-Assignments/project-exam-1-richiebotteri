@@ -3,6 +3,7 @@
 const API_URL = "http://localhost:80/wordpress/wp-json/wp/v2/posts?_embed&&per_page=";
 const viewMoreBtn = document.querySelector(".diamond-icon");
 let per_page = 2;
+const postsContainer = document.querySelector(".posts-container");
 
 async function getWpPostData() {
    try {
@@ -12,12 +13,17 @@ async function getWpPostData() {
       displayPostsOnIndex(posts);
    } catch {
       console.log("error");
+      postsContainer.innerHTML = "";
+      postsContainer.innerHTML += `
+      <div class="error flex-col flex-gap-20">
+          <p class="font-size-p3">Oh now, something went wrong :/</p>
+          <p class="font-size-p3">Come back later and try again!</p>
+      </div>`;
    }
 }
 
 getWpPostData();
 
-const postsContainer = document.querySelector(".posts-container");
 let postHtmlData = "";
 
 function displayPostsOnIndex(posts) {
