@@ -1,6 +1,6 @@
 // Fetching wordpress API to be used for index-, posts- and single-post page
 
-const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts";
+const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts/";
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -29,13 +29,14 @@ function displaySinglePost(singlePost) {
    contentContainer.innerHTML = "";
    singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
       singlePost._embedded["author"].forEach(function (authorArray) {
+         console.dir(singlePost);
          contentContainer.innerHTML += `
                <nav class="breadcrumb flex flex-gap-10 center-vertical text-cap">
                   <a href="index.html" class="breadcrumb__link">Home</a>
                   <i class="fa-sharp fa-solid fa-angle-right"></i>
                   <a href="posts.html" class="breadcrumb__link">Posts</a>
                   <i class="fa-sharp fa-solid fa-angle-right"></i>
-                  <p class="font-size-p4">${singlePost.title.rendered}</p>
+                  <p class="font-size-p4">Single Post</p>
                </nav>
                <div class="post-image">
                   <img class="img-cover" src="${imageArray.source_url}" alt="Strength Workout" />
@@ -50,7 +51,7 @@ function displaySinglePost(singlePost) {
                <div class="post-description flex-col flex-gap-10 padding-w-20">
                   <h1 class="font-size-h3">${singlePost.title.rendered}</h1>
                   <p class="post-description__metadata font-size-p4">Written by: ${authorArray.name} </p>
-                  <span class="post-description__story">${singlePost.excerpt.rendered}</span>
+                  <span class="post-description__story flex-col flex-gap-40">${singlePost.content.rendered}</span>
                </div>
           
       `;

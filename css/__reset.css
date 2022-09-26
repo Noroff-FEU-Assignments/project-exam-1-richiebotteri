@@ -24,6 +24,8 @@ ul {
 
 li {
    padding: 5px 0;
+
+   font-size: var(--font-p3);
 }
 
 a {
@@ -47,6 +49,7 @@ h3 {
 
 p {
    font-size: var(--font-p3);
+   font-variation-settings: "wght" 500;
 }
 
 button {
