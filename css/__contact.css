@@ -1,3 +1,5 @@
+/* Form styles */
+
 .form__input {
    height: 50px;
    padding: 0 20px;
@@ -29,9 +31,6 @@
 .hide-success-msg {
    display: none;
 }
-
-/* ------------------------------------------------------- */
-/* Submit button */
 
 .submit-btn {
    margin-top: 40px;
