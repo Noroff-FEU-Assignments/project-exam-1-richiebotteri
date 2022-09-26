@@ -53,6 +53,7 @@ function displayPostsOnIndex(posts) {
 
 let numberOfSlider = 0;
 
+// Api has a data transfer delay. Adding this as fix
 setTimeout(function () {
    numberOfSlider = sliderPostsContainer.children.length - 2;
 }, 1000);

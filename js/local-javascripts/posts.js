@@ -2,7 +2,7 @@
 
 const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts?_embed&&per_page=";
 const viewMoreBtn = document.querySelector(".diamond-icon");
-let per_page = 2;
+let per_page = 10;
 const postsContainer = document.querySelector(".posts-container");
 
 async function getWpPostData() {
@@ -50,7 +50,7 @@ function displayPostsOnIndex(posts) {
 }
 
 const addMorePosts = function () {
-   per_page += 2;
+   per_page += 10;
    postHtmlData = "";
    getWpPostData();
 };

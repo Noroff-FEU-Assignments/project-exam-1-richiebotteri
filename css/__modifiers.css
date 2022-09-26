@@ -14,6 +14,10 @@
    cursor: pointer;
 }
 
+.diamond-icon--white > * {
+   color: black;
+}
+
 /* Next Button Variation */
 
 .next-post-btn--previous {

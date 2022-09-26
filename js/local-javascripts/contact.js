@@ -61,7 +61,7 @@ const validateEmail = function (activeInput) {
       console.log("email == passed");
       removeValidationMessage(activeInput, true);
    } else {
-      console.log("email == NOt passed");
+      console.log("email == NOT passed");
       showValidationMessage(activeInput, false);
    }
 };
@@ -84,11 +84,11 @@ function showValidationMessage(activeInput, isValid) {
 
 function checkAllFormInputs() {
    // Condition: check if array has one or more false values
-   const falsy = function (element) {
+   const isFalsy = function (element) {
       return element === false;
    };
 
-   if (passArray.some(falsy)) {
+   if (passArray.some(isFalsy)) {
       console.log("form is not valid");
       notValidFormMsg.classList.remove("hide-valid-msg");
       submitMsg.classList.add("hide-success-msg");

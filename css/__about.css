@@ -17,4 +17,7 @@
    .about-wrapper {
       width: 70%;
    }
+   .diamond-icon-wrapper--left {
+      left: -260px;
+   }
 }
