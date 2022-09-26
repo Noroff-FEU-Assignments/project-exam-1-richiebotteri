@@ -12,3 +12,75 @@
 .post-description__story {
    padding: 20px 0px;
 }
+
+.modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   overflow: auto;
+   background: rgba(0, 0, 0, 0.8);
+   justify-content: center;
+   align-items: center;
+}
+
+.modal__wrapper {
+   position: relative;
+   min-width: 300px;
+   max-width: 1000px;
+}
+
+.modal__image {
+   width: 100%;
+   object-fit: cover;
+}
+.modal__image-description {
+   position: relative;
+   top: -30px;
+   background-color: var(--black-color);
+   color: var(--white-color);
+   padding: 15px;
+}
+
+.modal__image-description > * {
+   text-align: center;
+}
+
+.modal__close-menu-btn {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 50px;
+   height: 50px;
+
+   background-color: var(--white-color);
+   transition: 0.03s ease-in;
+   cursor: pointer;
+}
+
+.modal__close-menu-btn:hover {
+   background-color: var(--black-color);
+   outline: 3px solid var(--white-color);
+}
+
+.modal__close-menu-btn:focus {
+   outline: 3px dotted var(--white-color);
+}
+
+.modal__close-menu-btn:focus > * {
+   color: var(--black-color);
+}
+
+.modal__close-menu-btn > * {
+   color: var(--black-color);
+   font-size: var(--font-p3);
+}
+
+.modal__close-menu-btn:hover > * {
+   color: var(--white-color);
+}
+
+.hide-modal {
+   display: none;
+}

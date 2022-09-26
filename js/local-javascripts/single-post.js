@@ -1,13 +1,9 @@
 // Fetching wordpress API to be used for index-, posts- and single-post page
 
-const API_URL = "http://localhost:80/wordpress/wp-json/wp/v2/posts/";
-
+const API_URL = "https:///webdev-project-two.uk/wordpress/wp-json/wp/v2/posts/";
 const queryString = window.location.search;
-
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id");
-
 const contentContainer = document.querySelector("[data-main-post-content]");
 
 async function getWpPostData() {
@@ -34,21 +30,28 @@ function displaySinglePost(singlePost) {
    singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
       singlePost._embedded["author"].forEach(function (authorArray) {
          contentContainer.innerHTML += `
-                <nav class="breadcrumb flex flex-gap-10 center-vertical text-cap">
-                   <a href="index.html" class="breadcrumb__link">Home</a>
-                   <i class="fa-sharp fa-solid fa-angle-right"></i>
-                   <a href="posts.html" class="breadcrumb__link">Posts</a>
-                   <i class="fa-sharp fa-solid fa-angle-right"></i>
-                   <p class="font-size-p4">${singlePost.title.rendered}</p>
-                </nav>
-                <div class="post-image">
-                   <img class="img-cover" src="${imageArray.source_url}" alt="Strength Workout" />
-                </div>
-                <div class="post-description flex-col flex-gap-10 padding-w-20">
-                   <h1 class="font-size-h3">${singlePost.title.rendered}</h1>
-                   <p class="post-description__metadata font-size-p4">Written by: ${authorArray.name} </p>
-                   <span class="post-description__story">${singlePost.excerpt.rendered}</span>
-                </div>
+               <nav class="breadcrumb flex flex-gap-10 center-vertical text-cap">
+                  <a href="index.html" class="breadcrumb__link">Home</a>
+                  <i class="fa-sharp fa-solid fa-angle-right"></i>
+                  <a href="posts.html" class="breadcrumb__link">Posts</a>
+                  <i class="fa-sharp fa-solid fa-angle-right"></i>
+                  <p class="font-size-p4">${singlePost.title.rendered}</p>
+               </nav>
+               <div class="post-image">
+                  <img class="img-cover" src="${imageArray.source_url}" alt="Strength Workout" />
+               </div>
+               <div class="modal flex padding-w-20 hide-modal">
+                  <div class="modal__wrapper">
+                     <img class="modal__image" src="${imageArray.source_url}" alt="Strength Workout" />
+                     <div class="modal__image-description"><p class="font-size-p4">Image description</p></div>
+                     <button class="modal__close-menu-btn"><i class="fa-solid fa-xmark modal__close-menu-btn-icon"></i></button>
+                  </div>
+               </div>   
+               <div class="post-description flex-col flex-gap-10 padding-w-20">
+                  <h1 class="font-size-h3">${singlePost.title.rendered}</h1>
+                  <p class="post-description__metadata font-size-p4">Written by: ${authorArray.name} </p>
+                  <span class="post-description__story">${singlePost.excerpt.rendered}</span>
+               </div>
           
       `;
       });
@@ -56,3 +59,18 @@ function displaySinglePost(singlePost) {
 }
 
 getWpPostData();
+
+contentContainer.addEventListener("click", function (event) {
+   const modalContainer = document.querySelector(".modal");
+   if (event.target.classList.contains("img-cover")) {
+      modalContainer.classList.remove("hide-modal");
+   } else if (event.target.classList.contains("modal__close-menu-btn")) {
+      console.log(event.target);
+      modalContainer.classList.add("hide-modal");
+   } else if (event.target.classList.contains("modal__close-menu-btn-icon")) {
+      console.log(event.target);
+      modalContainer.classList.add("hide-modal");
+   }
+});
+
+// Show modal

@@ -1,6 +1,6 @@
 // Fetching wordpress API to be used for index-, posts- and single-post page
 
-const API_URL = "http://localhost:80/wordpress/wp-json/wp/v2/posts?_embed&&per_page=";
+const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts?_embed&&per_page=";
 const viewMoreBtn = document.querySelector(".diamond-icon");
 let per_page = 2;
 const postsContainer = document.querySelector(".posts-container");
