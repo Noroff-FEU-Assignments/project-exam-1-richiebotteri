@@ -1,6 +1,6 @@
 // Fetching wordpress API to be used for index-, posts- and single-post page
 
-const API_URL = "https:///webdev-project-two.uk/wordpress/wp-json/wp/v2/posts/";
+const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts";
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
