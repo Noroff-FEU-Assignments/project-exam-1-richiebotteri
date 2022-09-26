@@ -71,7 +71,8 @@ contentContainer.addEventListener("click", function (event) {
    } else if (event.target.classList.contains("modal__close-menu-btn-icon")) {
       console.log(event.target);
       modalContainer.classList.add("hide-modal");
+   } else if (event.target.classList.contains("modal")) {
+      console.log(event.target);
+      modalContainer.classList.add("hide-modal");
    }
 });
-
-// Show modal
