@@ -64,6 +64,11 @@
    flex-direction: column;
 }
 
+.flex-colrow-rev {
+   display: flex;
+   flex-direction: column;
+}
+
 .flex-gap-10 {
    gap: 10px;
 }
@@ -101,5 +106,8 @@
 @media (min-width: 770px) {
    .flex-colrow {
       flex-direction: row;
+   }
+   .flex-colrow-rev {
+      flex-direction: row-reverse;
    }
 }

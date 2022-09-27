@@ -1,16 +1,22 @@
 .about-section {
    align-items: center;
+   justify-content: center;
+   height: 70vh;
+}
+
+.about-section__wrapper {
+   height: 80vh;
 }
 
 .about-img-wrapper {
-   height: 200px;
+   height: auto;
    width: 200px;
 }
 .about-img {
-   height: 100%;
    width: 100%;
+   height: 100%;
    object-fit: cover;
-   border-radius: 50%;
+   border-radius: 5%;
 }
 
 .about-wrapper {
