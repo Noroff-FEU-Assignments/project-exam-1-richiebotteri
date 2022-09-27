@@ -11,6 +11,8 @@
 
 .post-description__story {
    padding: 20px 0px;
+   padding-bottom: 40px;
+   border-bottom: 2px solid var(--black-color);
 }
 
 .post-description__story li {

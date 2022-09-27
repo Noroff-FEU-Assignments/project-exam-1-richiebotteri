@@ -81,12 +81,18 @@
    color: var(--white-color);
 }
 
-:is(.next-post-btn, .next-post-btn--previous):hover,
-:is(.next-post-btn, .next-post-btn--previous):focus {
+:is(.next-post-btn, .next-post-btn--previous):hover {
    background-color: var(--yellow-color);
    border: 1px solid var(--black-color);
    color: var(--black-color);
    transition: 0.1s ease-in;
+}
+
+:is(.next-post-btn, .next-post-btn--previous):active,
+:is(.next-post-btn, .next-post-btn--previous):focus {
+   background-color: var(--white-color);
+   color: var(--black-color);
+   border: 3px solid var(--black-color);
 }
 
 @media (min-width: 740px) {
