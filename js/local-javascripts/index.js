@@ -47,39 +47,38 @@ function displayPostsOnIndex(posts) {
    });
 
    sliderPostsContainer.innerHTML = postHtmlData;
+   activateSlider(sliderPostsContainer);
 }
 
 // Setting up functional buttons for slider on index.html
 
-let numberOfSlider = 0;
+function activateSlider(updatedSliderContainer) {
+   let numberOfSlider = 0;
+   numberOfSlider = updatedSliderContainer.children.length - 2;
 
-// Api has a data transfer delay. Adding this as fix
-setTimeout(function () {
-   numberOfSlider = sliderPostsContainer.children.length - 2;
-}, 1000);
+   const nextPostBtn = document.querySelector("[data-slider-button-next]");
+   const previousPostBtn = document.querySelector("[data-slider-button-last]");
+   let activeSlide = 0;
 
-const nextPostBtn = document.querySelector("[data-slider-button-next]");
-const previousPostBtn = document.querySelector("[data-slider-button-last]");
-let activeSlide = 0;
-
-function moveToNextSlide() {
-   if (activeSlide > -numberOfSlider) {
-      activeSlide -= 1;
-      let currentTransform = activeSlide * 370;
-      sliderPostsContainer.style.transform = `translateX(${currentTransform}px)`;
-      console.log(currentTransform);
+   function moveToNextSlide() {
+      if (activeSlide > -numberOfSlider) {
+         activeSlide -= 1;
+         let currentTransform = activeSlide * 370;
+         sliderPostsContainer.style.transform = `translateX(${currentTransform}px)`;
+         console.log(currentTransform);
+      }
    }
-}
 
-function moveToPreviousSlide() {
-   if (activeSlide < 0) {
-      activeSlide += 1;
-      console.log(activeSlide);
-      sliderPostsContainer.style.transform = `translateX(${activeSlide * 370}px)`;
-   } else {
-      console.log("Can't go past first slide");
+   function moveToPreviousSlide() {
+      if (activeSlide < 0) {
+         activeSlide += 1;
+         console.log(activeSlide);
+         sliderPostsContainer.style.transform = `translateX(${activeSlide * 370}px)`;
+      } else {
+         console.log("Can't go past first slide");
+      }
    }
-}
 
-nextPostBtn.addEventListener("click", moveToNextSlide);
-previousPostBtn.addEventListener("click", moveToPreviousSlide);
+   nextPostBtn.addEventListener("click", moveToNextSlide);
+   previousPostBtn.addEventListener("click", moveToPreviousSlide);
+}
