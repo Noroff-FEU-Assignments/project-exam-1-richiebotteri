@@ -71,32 +71,33 @@ const validateEmail = function (activeInput) {
 function removeValidationMessage(activeInput, isValid) {
    activeInput.nextSibling.nextElementSibling.classList.add("hide-valid-msg");
    passArray.push(isValid);
-   console.log(passArray);
-   checkAllFormInputs();
 }
 
 function showValidationMessage(activeInput, isValid) {
    activeInput.nextSibling.nextElementSibling.classList.remove("hide-valid-msg");
    passArray.push(isValid);
-   console.log(passArray);
-   checkAllFormInputs();
 }
 
 function checkAllFormInputs() {
    // Condition: check if array has one or more false values
-   const isFalsy = function (element) {
-      return element === false;
+   console.log(passArray);
+   const isFalsy = function (form) {
+      return form === false;
    };
 
    if (passArray.some(isFalsy)) {
-      console.log("form is not valid");
+      console.log("Form is not valid");
       submitMsg.classList.add("hide-success-msg");
    } else {
-      console.log("form passed!");
+      console.log("Form passed validation!");
       submitMsg.classList.remove("hide-success-msg");
+      setTimeout(() => {
+         form.submit();
+      }, 2000);
    }
 }
 
 // Listeners
 
 form.addEventListener("submit", sendFeedbackIfNotValid);
+form.addEventListener("submit", checkAllFormInputs);
