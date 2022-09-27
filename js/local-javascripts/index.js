@@ -68,14 +68,6 @@ function moveToNextSlide() {
       let currentTransform = activeSlide * 370;
       sliderPostsContainer.style.transform = `translateX(${currentTransform}px)`;
       console.log(currentTransform);
-   } else {
-      console.log("error");
-      contentContainer.innerHTML = "";
-      contentContainer.innerHTML += `
-      <div class="error flex-col flex-gap-20">
-          <p class="font-size-p3">Oh now, something went wrong :/</p>
-          <p class="font-size-p3">Come back later and try again!</p>
-      </div>`;
    }
 }
 
