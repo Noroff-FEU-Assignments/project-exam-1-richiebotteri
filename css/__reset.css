@@ -37,17 +37,14 @@ a {
 
 h1 {
    font-size: var(--font-h1);
-   font-variation-settings: "wght" 700;
 }
 
 h2 {
    font-size: var(--font-h2);
-   font-variation-settings: "wght" 600;
 }
 
 h3 {
    font-size: var(--font-h3);
-   font-variation-settings: "wght" 600;
 }
 
 button {
