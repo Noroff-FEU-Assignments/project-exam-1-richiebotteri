@@ -23,7 +23,10 @@ async function getWpPostData() {
 
 getWpPostData();
 
+// Display Posts on index
+
 let postHtmlData = "";
+
 function displayPostsOnIndex(posts) {
    posts.forEach(function (singlePost) {
       singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
@@ -32,14 +35,14 @@ function displayPostsOnIndex(posts) {
 
             postHtmlData += `
             <div class="slide-post">
-            <a href="single-post.html?id=${singlePost.id}" class="slide-post__link" >
-            <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
-            <div class="slide-post__description">
-            <p class="slide-post__title font-size-p2">${singlePost.title.rendered}</p>
-            <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
-            <p class="slide-post__read-more font-size-p3">Read more</p>
-            </div>
-            </a>
+               <a href="single-post.html?id=${singlePost.id}" class="slide-post__link" >
+                  <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
+                  <div class="slide-post__description flex-col">
+                     <h3 class="slide-post__title">${singlePost.title.rendered}</h3>
+                     <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
+                     <p class="slide-post__read-more font-size-p2">Read more</p>
+                  </div>
+               </a>
             </div>
             `;
          });

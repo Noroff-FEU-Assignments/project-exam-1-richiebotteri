@@ -97,7 +97,7 @@ function checkAllFormInputs() {
    }
 }
 
-// Listeners
+// Listening to submit event on form to activate functions
 
 form.addEventListener("submit", sendFeedbackIfNotValid);
 form.addEventListener("submit", checkAllFormInputs);

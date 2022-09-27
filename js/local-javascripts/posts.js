@@ -31,16 +31,16 @@ function displayPostsOnIndex(posts) {
       singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
          singlePost._embedded["author"].forEach(function (authorArray) {
             postHtmlData += `
-               <div class="slide-post">
+            <div class="slide-post">
                <a href="single-post.html?id=${singlePost.id}" class="slide-post__link" >
-               <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
-               <div class="slide-post__description">
-               <p class="slide-post__title font-size-p2">${singlePost.title.rendered}</p>
-               <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
-               <p class="slide-post__read-more font-size-p3">Read more</p>
-               </div>
+                  <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
+                  <div class="slide-post__description flex-col">
+                     <h2 class="slide-post__title font-size-h3">${singlePost.title.rendered}</h2>
+                     <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
+                     <p class="slide-post__read-more font-size-p2">Read more</p>
+                  </div>
                </a>
-               </div>
+            </div>
               `;
          });
       });

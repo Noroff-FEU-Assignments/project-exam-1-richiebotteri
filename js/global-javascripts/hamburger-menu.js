@@ -1,3 +1,5 @@
+// Script toggle menu on and off when clicking
+
 const menuButton = document.querySelector(".header-menu-btn");
 const closeMenuButton = document.querySelector(".close-menu-btn");
 

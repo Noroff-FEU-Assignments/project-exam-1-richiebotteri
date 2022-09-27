@@ -9,7 +9,6 @@
    text-decoration: none;
    list-style: none;
    box-sizing: border-box;
-   font-size: var(--font-base-size);
 }
 
 body {
@@ -24,8 +23,12 @@ ul {
 
 li {
    padding: 5px 0;
+   font-size: var(--font-p2);
+}
 
-   font-size: var(--font-p3);
+li,
+p {
+   line-height: 2em;
 }
 
 a {
@@ -45,11 +48,6 @@ h2 {
 h3 {
    font-size: var(--font-h3);
    font-variation-settings: "wght" 600;
-}
-
-p {
-   font-size: var(--font-p3);
-   font-variation-settings: "wght" 500;
 }
 
 button {

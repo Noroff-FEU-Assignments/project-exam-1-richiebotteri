@@ -6,7 +6,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const contentContainer = document.querySelector("[data-main-post-content]");
 const titleTag = document.querySelector("title");
-console.log(titleTag);
+
 async function getWpPostData() {
    try {
       const response = await fetch(API_URL + id + "?_embed");
@@ -30,7 +30,6 @@ function displaySinglePost(singlePost) {
    contentContainer.innerHTML = "";
    singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
       singlePost._embedded["author"].forEach(function (authorArray) {
-         console.dir(singlePost);
          titleTag.innerText = `My Blog | ${singlePost.title.rendered}`;
          contentContainer.innerHTML += `
                <nav class="breadcrumb flex flex-gap-10 center-vertical text-cap">
@@ -38,7 +37,7 @@ function displaySinglePost(singlePost) {
                   <i class="fa-sharp fa-solid fa-angle-right"></i>
                   <a href="posts.html" class="breadcrumb__link">Posts</a>
                   <i class="fa-sharp fa-solid fa-angle-right"></i>
-                  <p class="font-size-p4">${singlePost.title.rendered}</p>
+                  <p class="font-size-p3">${singlePost.title.rendered}</p>
                </nav>
                <div class="post-image">
                   <img class="img-cover" src="${imageArray.source_url}" alt="Strength Workout" />
@@ -46,14 +45,14 @@ function displaySinglePost(singlePost) {
                <div class="modal flex padding-w-20 hide-modal">
                   <div class="modal__wrapper">
                      <img class="modal__image" src="${imageArray.source_url}" alt="${imageArray.alt_text}" />
-                     <div class="modal__image-description"><span class="font-size-p4">${imageArray.caption.rendered}</span></div>
+                     <div class="modal__image-description"><span class="font-size-p3">${imageArray.caption.rendered}</span></div>
                      <button class="modal__close-menu-btn"><i class="fa-solid fa-xmark modal__close-menu-btn-icon"></i></button>
                   </div>
                </div>   
                <div class="post-description flex-col flex-gap-20 padding-w-20">
-                  <h1 class="font-size-h3">${singlePost.title.rendered}</h1>
-                  <p class="post-description__metadata font-size-p4">Written by: ${authorArray.name} </p>
-                  <span class="post-description__story flex-col flex-gap-40">${singlePost.content.rendered}</span>
+                  <h1>${singlePost.title.rendered}</h1>
+                  <p class="post-description__metadata font-size-p3">Written by: ${authorArray.name} </p>
+                  <span class="post-description__story flex-col flex-gap-40 font-size-p2">${singlePost.content.rendered}</span>
                   <span class="post-description__date flex-col flex-gap-40">Posted on: ${new Date(singlePost.date)}</span>
                </div>
           
@@ -64,18 +63,17 @@ function displaySinglePost(singlePost) {
 
 getWpPostData();
 
+// Listening for click event to toggle modal
+
 contentContainer.addEventListener("click", function (event) {
    const modalContainer = document.querySelector(".modal");
    if (event.target.classList.contains("img-cover")) {
       modalContainer.classList.remove("hide-modal");
    } else if (event.target.classList.contains("modal__close-menu-btn")) {
-      console.log(event.target);
       modalContainer.classList.add("hide-modal");
    } else if (event.target.classList.contains("modal__close-menu-btn-icon")) {
-      console.log(event.target);
       modalContainer.classList.add("hide-modal");
    } else if (event.target.classList.contains("modal")) {
-      console.log(event.target);
       modalContainer.classList.add("hide-modal");
    }
 });
