@@ -90,11 +90,9 @@ function checkAllFormInputs() {
 
    if (passArray.some(isFalsy)) {
       console.log("form is not valid");
-      notValidFormMsg.classList.remove("hide-valid-msg");
       submitMsg.classList.add("hide-success-msg");
    } else {
       console.log("form passed!");
-      notValidFormMsg.classList.add("hide-valid-msg");
       submitMsg.classList.remove("hide-success-msg");
    }
 }
