@@ -1,10 +1,10 @@
-@import url("../css/__variables.css");
-@import url("../css/__reset.css");
-@import url("../css/__components.css");
-@import url("../css/__utility-classes.css");
+@import url("../css/global-css/__variables.css");
+@import url("../css/global-css/__reset.css");
+@import url("../css/global-css/__components.css");
+@import url("../css/global-css/__utility-classes.css");
 @import url("../css/__index.css");
 @import url("../css/__about.css");
 @import url("../css/__posts.css");
 @import url("../css/__contact.css");
 @import url("../css/__single-post.css");
-@import url("../css/__modifiers.css");
+@import url("../css/global-css/__modifiers.css");
