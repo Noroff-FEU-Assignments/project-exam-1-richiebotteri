@@ -6,6 +6,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const contentContainer = document.querySelector("[data-main-post-content]");
 const titleTag = document.querySelector("title");
+const metaTag = document.getElementsByTagName("meta");
 
 async function getWpPostData() {
    try {
@@ -29,8 +30,15 @@ async function getWpPostData() {
 function displaySinglePost(singlePost) {
    contentContainer.innerHTML = "";
    singlePost._embedded["wp:featuredmedia"].forEach(function (imageArray) {
+      singlePost._embedded["wp:term"].forEach(function (term) {
+         term.forEach(function (slugs) {
+            console.log(slugs.slug);
+            metaTag.keywords.content += `,${slugs.slug}`;
+         });
+      });
       singlePost._embedded["author"].forEach(function (authorArray) {
          titleTag.innerText = `My Blog | ${singlePost.title.rendered}`;
+         metaTag.description.content = `${singlePost.title.rendered}`;
          contentContainer.innerHTML += `
                <nav class="breadcrumb flex flex-gap-10 center-vertical text-cap">
                   <a href="index.html" class="breadcrumb__link">Home</a>

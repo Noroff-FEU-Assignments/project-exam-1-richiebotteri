@@ -36,7 +36,7 @@ function displayPostsOnIndex(posts) {
             postHtmlData += `
             <div class="slide-post">
                <a href="single-post.html?id=${singlePost.id}" class="slide-post__link" >
-                  <img class="slide-post__img" src="${imageArray.source_url}" alt="post-1-img" />
+                  <img class="slide-post__img" src="${imageArray.source_url}" alt="${imageArray.alt_text}" />
                   <div class="slide-post__description flex-col">
                      <h3 class="slide-post__title">${singlePost.title.rendered}</h3>
                      <span class="slide-post__content">${singlePost.excerpt.rendered}</span>
