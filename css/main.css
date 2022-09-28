@@ -8,3 +8,11 @@
 @import url("../css/local__contact.css");
 @import url("../css/local__single-post.css");
 @import url("../css/global__modifiers.css");
+
+/* 
+Notes on file-structure:
+
+Css is separated for easier navigation and modifications to css styles
+i have used BEM-method and utility classes for this project. Therefor
+it has a map for modifiers and utility-class.
+*/
