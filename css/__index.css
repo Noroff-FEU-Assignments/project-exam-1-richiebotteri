@@ -23,6 +23,7 @@
    background-color: rgba(42, 42, 42, 0.9);
    color: var(--white-color);
    padding: 20px;
+   /* line-height: 3em; */
 }
 
 /* ------------------------------------------------------- */
@@ -106,6 +107,11 @@
       height: 400px;
       padding: 70px 20px;
    }
+
+   .banner-description h1 {
+      line-height: 1.5em;
+   }
+
    .latest-posts__header-title {
       text-align: left;
    }

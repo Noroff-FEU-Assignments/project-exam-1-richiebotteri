@@ -1,7 +1,7 @@
 .about-section {
    align-items: center;
    justify-content: center;
-   height: 70vh;
+   height: 700px;
 }
 
 .about-section__wrapper {
@@ -24,6 +24,10 @@
 }
 
 @media (min-width: 770px) {
+   .about-section {
+      height: 500px;
+   }
+
    .about-wrapper {
       width: 70%;
    }
