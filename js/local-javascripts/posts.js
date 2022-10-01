@@ -4,12 +4,12 @@ const API_URL = "https://webdev-project-two.uk/wp-json/wp/v2/posts?_embed&&per_p
 const viewMoreBtn = document.querySelector(".diamond-icon");
 let per_page = 10;
 const postsContainer = document.querySelector(".posts-container");
+const allPostsTitle = document.querySelector(".all-post-title");
 
 async function getWpPostData() {
    try {
       const response = await fetch(API_URL + per_page.toString());
       const posts = await response.json();
-      console.log(posts.length);
       displayPostsOnIndex(posts);
    } catch {
       console.log("error");
@@ -45,7 +45,7 @@ function displayPostsOnIndex(posts) {
          });
       });
    });
-
+   allPostsTitle.innerHTML = `all posts (${posts.length})`;
    postsContainer.innerHTML = postHtmlData;
 }
 
