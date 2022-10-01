@@ -53,6 +53,7 @@ const addMorePosts = function () {
    per_page += 10;
    postHtmlData = "";
    getWpPostData();
+   viewMoreBtn.classList.add("hide-more-btn");
 };
 
 viewMoreBtn.addEventListener("click", addMorePosts);

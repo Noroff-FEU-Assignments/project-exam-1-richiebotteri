@@ -11,3 +11,7 @@
 .diamond-icon--yellow:hover .diamond-icon__more-posts {
    color: var(--yellow-color);
 }
+
+.hide-more-btn {
+   display: none;
+}
