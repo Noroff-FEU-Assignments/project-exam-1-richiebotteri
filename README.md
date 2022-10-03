@@ -1,4 +1,4 @@
-# Cross-course project; Rainydays
+# Project Exam 1: Create a blog
 
 ![image](/images/readme_image.jpg)
 
