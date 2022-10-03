@@ -6,7 +6,7 @@ A simple overview of the use/purpose of the project.
 
 ## Description
 
-In this website we where tasked to design a blog of choice to showcase all that we have learned this year. I choose to create a Fitness/Nutrition blog for this project.
+In this website we where tasked to design and build a blog of choice to showcase all that we have learned this year. I choose to create a Fitness/Nutrition blog for this project.
 
 In order to pass this exam we need to create the following:
 
